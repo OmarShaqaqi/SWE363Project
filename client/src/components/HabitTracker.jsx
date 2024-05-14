@@ -29,7 +29,7 @@ function HabitTracker(props) {
                   updatedDays[dayIndex] = !updatedDays[dayIndex];
   
                   // Call the backend to update the database
-                  axios.patch(`http://localhost:4000/updatehabit/${habitId}`, {
+                  axios.patch(`${process.env.SERVER_URL}/updatehabit/${habitId}`, {
                       day: dayIndex,
                       newValue: updatedDays[dayIndex]
                   },{
@@ -85,7 +85,7 @@ function HabitTracker(props) {
         if (username) {
           try {
             const response = await axios.post(
-              "http://localhost:4000/habits",
+              `${process.env.SERVER_URL}/habits`,
               { username: username },
               {
                 headers: {
@@ -136,7 +136,7 @@ function HabitTracker(props) {
       // Add new item to the list
       setHabits([...habits, { name: input, days: generateStartArray() }]);
 
-      axios.post("http://localhost:4000/inserthabit", {
+      axios.post(`${process.env.SERVER_URL}/inserthabit`, {
         habit: input,
         username: username,
         days:generateStartArray()
@@ -176,7 +176,7 @@ function HabitTracker(props) {
     }))
     
 
-    axios.delete(`http://localhost:4000/deletehabit/${habitId}`)
+    axios.delete(`${process.env.SERVER_URL}/deletehabit/${habitId}`)
     .then(response => {
         console.log("Habit deleted successfully:", response.data);
         // Update the state to remove the habit from the list

@@ -2,7 +2,6 @@ import React from "react";
 import HabitTracker from "./HabitTracker";
 import ToDoList from "./ToDoList";
 import { useLocation } from "react-router-dom";
-import axios from "axios";
 import InnerHeading from "./InnerHeading";
 import Timer from "./Timer";
 
