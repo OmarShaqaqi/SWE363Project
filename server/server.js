@@ -398,7 +398,7 @@ app.post('/api/friends/get', async (req, res) => {
             console.log(result.rows)
             res.status(201).send(JSON.stringify(result.rows));
         } else {
-            res.status(409).send('Friendship already exists.');
+            res.status(201).send(JSON.stringify([]));
         }
     } catch (error) {
         res.status(500).send('Failed to add friend due to server error.');
