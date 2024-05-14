@@ -20,7 +20,7 @@ function ChartPage(props) {
     useEffect(() => {
         async function fetchDailyHabits() {
             try {
-                const result = await axios.post(`${process.env.SERVER_URL}/habits/stat`, { username }, {
+                const result = await axios.post("http://localhost:4000/habits/stat", { username }, {
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                 });
                 

@@ -60,7 +60,7 @@ function Register() {
             };
     
             // POST request using Axios inside the Register component
-            axios.post(`${process.env.SERVER_URL}/api/register`,{
+            axios.post('http://localhost:4000/api/register',{
                 username: formData.username,
                 password: formData.password,
                 name: formData.name,

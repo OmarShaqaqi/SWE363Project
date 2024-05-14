@@ -15,7 +15,7 @@ import axios from "axios";
     if (username) {
       try {
         const response = await axios.post(
-          `${process.env.SERVER_URL}/goals`,
+          "http://localhost:4000/goals",
           { username: username },
           {
             headers: {
@@ -57,7 +57,7 @@ function buttonClicked(event) {
     // Clear input field
     
 
-    axios.post(`${process.env.SERVER_URL}/insertgoal`, {
+    axios.post("http://localhost:4000/insertgoal", {
       goal: input,
       username: username
     }, {
@@ -96,7 +96,7 @@ function buttonClicked(event) {
     const questionsJSON = JSON.stringify(filteredItems);
   
     // Perform axios post request
-    axios.post(`${process.env.SERVER_URL}/deletegoal`, {
+    axios.post("http://localhost:4000/deletegoal", {
       goals: questionsJSON,
       username: username
     }, {

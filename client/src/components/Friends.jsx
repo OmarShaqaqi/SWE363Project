@@ -28,7 +28,7 @@ function FriendManager() {
 
 
     async function addFriendsHabits(){
-        const result = await axios.post(`${process.env.SERVER_URL}/api/friends/get`,{ user_id: username },{
+        const result = await axios.post('http://localhost:4000/api/friends/get',{ user_id: username },{
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
@@ -49,7 +49,7 @@ function FriendManager() {
     }
 
     const handleAddFriend = () => {
-        axios.post(`${process.env.SERVER_URL}/api/friends/add`, { user_id: username, friend_id: friendId },{
+        axios.post('http://localhost:4000/api/friends/add', { user_id: username, friend_id: friendId },{
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
@@ -66,7 +66,7 @@ function FriendManager() {
     };
 
     const handleDeleteFriend = () => {
-        axios.delete(`${process.env.SERVER_URL}/api/friends/delete`,  { user_id: username, friend_id: friendId } ,{
+        axios.delete('http://localhost:4000/api/friends/delete',  { user_id: username, friend_id: friendId } ,{
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }

@@ -22,7 +22,7 @@ function Profile() {
 
     useEffect(() => {
         // Fetch user info when the component mounts
-        axios.get(`${process.env.SERVER_URL}/api/user/${username}`)
+        axios.get(`http://localhost:4000/api/user/${username}`)
             .then(response => {
                 setUserInfo(response.data);
             })
@@ -41,7 +41,7 @@ function Profile() {
 
     const updateProfile = (event) => {
         event.preventDefault();
-        axios.put(`${process.env.SERVER_URL}/api/user/update`, userInfo,{
+        axios.put('http://localhost:4000/api/user/update', userInfo,{
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }})
@@ -64,7 +64,7 @@ function Profile() {
             return;
         }
         // API call to change password
-        axios.post(`${process.env.SERVER_URL}/api/user/change-password`, {
+        axios.post('http://localhost:4000/api/user/change-password', {
             username:userInfo.username,
             oldPassword: passwords.oldPassword,
             newPassword: passwords.newPassword

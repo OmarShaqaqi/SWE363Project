@@ -7,14 +7,13 @@ import bcrypt from "bcrypt"
 
 
 // defining the database 
-// const db = new pg.Client({
-//   user: "postgres",
-//   host: "localhost",
-//   database: "habitTracker",
-//   password: "1010",
-//   port: 5432,
-// })
-const db = new pg.Client(process.env.DATABASE_URL)
+const db = new pg.Client({
+  user: "postgres",
+  host: "localhost",
+  database: "habitTracker",
+  password: "1010",
+  port: 5432,
+})
 db.connect()
 const app = express();
 const port = 4000;
