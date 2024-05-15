@@ -26,7 +26,7 @@ function Main(){
         <div className="main">
             <InnerHeading username={username} />
             <Timer />
-            <div><h1>Welcome again, {username}</h1></div>
+            <div style={{display:"flex",flexDirection:"column",justifyContent:"center"}}><h1>Welcome again, {username}</h1></div>
             <HabitTracker username={username} add={true} />
             <ToDoList username={username}/>
         </div>

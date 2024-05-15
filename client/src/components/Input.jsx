@@ -12,7 +12,7 @@ function Input(props){
     }
     return(
 
-        <input style={{display:"block", color:"white"}}  onChange={changeValue} type={props.type} placeholder={props.placeholder} />
+        <input style={{display:"block", color:"black"}}  onChange={changeValue} type={props.type} placeholder={props.placeholder} />
     );
 }
 

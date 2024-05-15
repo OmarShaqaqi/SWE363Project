@@ -15,8 +15,8 @@ function InnerHeading(props){
     console.log("inside the nav")
     console.log(username);
     return(
-        <header style={{ marginTop:"0px"}}>
-            <div><h1>Habit Tracker</h1></div>
+        <header style={{ marginTop:"0px",display:"flex",flexDirection:"column"}}>
+            <div style={{margin:"auto"}}><h1>Habit Tracker</h1></div>
             <div style={{display:"flex",justifyContent:"center",gap:"1.5rem"
             }}>
 

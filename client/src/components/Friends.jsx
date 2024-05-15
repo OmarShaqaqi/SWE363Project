@@ -66,7 +66,7 @@ function FriendManager() {
     };
 
     const handleDeleteFriend = () => {
-        axios.delete('http://localhost:4000/api/friends/delete',  { user_id: username, friend_id: friendId } ,{
+        axios.post('http://localhost:4000/api/friends/delete',  { user_id: username, friend_id: friendId } ,{
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
@@ -85,7 +85,7 @@ function FriendManager() {
              <h1>Manage Friends</h1>
 
             <div>
-                <div>
+                <div style={{display:"flex",justifyContent:"center"}}>
                 <input
                     type="text"
                     placeholder="Friend's User ID"
@@ -101,8 +101,8 @@ function FriendManager() {
                  
             </div>
 
-            {friends.map(friend => (<div> 
-                <h1>friend username {friend}</h1>
+            {friends.map(friend => (<div style={{display:"flex",flexDirection:"column",justifyContent:"center"}}> 
+                <h1>{friend}</h1>
                 <HabitTracker key={friend.friend_id} username={friend} add={false} check={true} delete={true} />
             </div>
    

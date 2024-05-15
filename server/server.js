@@ -29,7 +29,7 @@ app.post("/adduser",(req,res)=>{
     const insertQuery = `INSERT INTO users(username, password) VALUES ($1, $2)`;
     const values = [username, password];
 
-
+ 
     db.query(insertQuery,values,(err,result) =>{
 
         if(err){
@@ -406,8 +406,9 @@ app.post('/api/friends/get', async (req, res) => {
     }
 });
 
-app.delete('/api/friends/delete', async (req, res) => {
+app.post('/api/friends/delete', async (req, res) => {
     const { user_id, friend_id } = req.body;
+    console.log(req.body);
     try {
         const result = await db.query(
             'DELETE FROM friends WHERE user_id = $1 AND friend_id = $2',
